@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { io } from "socket.io-client"
 
 const socket = io(`${import.meta.env.VITE_SERVER_URL}`)
+const apiUrl = import.meta.env.VITE_SERVER_URL
 
 export default function App() {
     const [data, setData] = useState(undefined);
     const [input, setInput] = useState('')
 
     useEffect(() => {
-        fetch('/api')
+        fetch(`${apiUrl}/api`)
             .then(res => {
                 return res.json()
             })
