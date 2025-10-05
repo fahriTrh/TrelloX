@@ -2,6 +2,7 @@ const express = require('express');
 const { PrismaClient } = require('./generated/prisma')
 const { createServer } = require('node:http')
 const { Server } = require('socket.io')
+require('dotenv').config();
 
 const app = express()
 app.use(express.json());
